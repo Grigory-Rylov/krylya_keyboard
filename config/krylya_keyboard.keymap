@@ -101,28 +101,28 @@
 
         default_layer {
             bindings = <
-&kp Q        &mt LEFT_GUI W  &mt LEFT_ALT E  &kp R               &kp T              &kp Y             &mt RSHFT U         &mt RALT I  &kp O       &kp P
-&mt LCTRL A  &kp S           &kp D           &mt LEFT_SHIFT F    &kp G              &kp H             &kp J               &kp K       &mt RGUI L  &mt RCTRL SEMICOLON
-&kp Z        &kp X           &kp C           &kp V               &kp B              &kp N             &kp M               &kp COMMA   &kp PERIOD  &kp SLASH
+&kp Q        &mt LEFT_GUI W  &mt LEFT_ALT E  &kp R               &kp T              &kp Y             &kp U         &mt RALT I  &mt RGUI O       &kp P
+&mt LCTRL A  &kp S           &kp D           &mt LEFT_SHIFT F    &kp G              &kp H             &mt RSHFT J   &kp K       &kp L            &mt RCTRL SEMICOLON
+&kp Z        &kp X           &kp C           &kp V               &kp B              &kp N             &kp M         &kp COMMA   &kp PERIOD       &kp SLASH
                              &mo NUMBERS     &lt FUNCTION SPACE  &mo NAVIGATION     &lt MOUSE ENTER &lt SYMBOLS SPACE      &lt HOTKEYS TAB
             >;
         };
 
         NAVIGATION {
             bindings = <
-&kp ESC             &kp LGUI          &kp LALT           &none            &none                 &bt BT_PRV   &kp HOME   &kp UP       &kp END        &kp LG(Y)
-&kp LEFT_CONTROL    &none             &none              &kp LSHIFT       &kp BACKSPACE         &bt BT_CLR   &kp LEFT   &kp DOWN     &kp RIGHT      &kp DELETE
-&none               &kp LG(LA(LEFT))  &kp LG(LA(RIGHT))  &kp BACKSPACE    &none                 &bt BT_NXT   &kp LG(Z)  &kp PAGE_UP  &kp PAGE_DOWN  &kp LG(A)
+&kp ESC             &kp LGUI          &kp LALT           &none            &none                 &none        &kp HOME   &kp UP       &kp END        &kp LG(Y)
+&kp LEFT_CONTROL    &none             &none              &kp LSHIFT       &kp BACKSPACE         &none        &kp LEFT   &kp DOWN     &kp RIGHT      &kp DELETE
+&none               &kp LG(LA(LEFT))  &kp LG(LA(RIGHT))  &kp BACKSPACE    &none                 &none        &kp LG(Z)  &kp PAGE_UP  &kp PAGE_DOWN  &kp LG(A)
                                                   &none            &none  &trans                &none        &none      &none
             >;
         };
 
         FUNCTION {
             bindings = <
-&none             &kp LGUI  &kp LALT                  &none            &none       &bt BT_NXT  &kp F7  &kp F8    &kp F9  &kp F10
-&kp LEFT_CONTROL  &none     &none              &kp LSHFT        &none       &bt BT_PRV  &kp F4  &kp F5    &kp F6  &kp F11
-&none             &none     &none                 &none            &none       &kp INS     &kp F1  &kp F2    &kp F3  &kp F12
-                            &trans &none     &none           &none   &none &kp SEMI
+&none             &kp LGUI  &kp LALT         &none            &none       &bt BT_NXT  &kp F7  &kp F8    &kp F9  &kp F10
+&kp LEFT_CONTROL  &none     &none            &kp LSHFT        &none       &bt BT_PRV  &kp F4  &kp F5    &kp F6  &kp F11
+&none             &none     &none            &none            &none       &kp INS     &kp F1  &kp F2    &kp F3  &kp F12
+                            &trans &none     &none            &none       &none       &kp SEMI
             >;
         };
 
@@ -137,8 +137,8 @@
 
         MOUSE {
             bindings = <
-&none  &msc SCRL_DOWN    &mmv MOVE_UP       &msc SCRL_UP   &none             &none  &none       &kp RALT  &kp RCTRL  &none
-&none  &mmv MOVE_LEFT    &mmv MOVE_DOWN     &mmv MOVE_RIGHT   &none          &none  &kp LGUI    &none     &none      &kp RSHFT
+&none  &msc SCRL_DOWN    &mmv MOVE_UP       &msc SCRL_UP   &none             &none  &none       &kp RALT  &kp LGUI   &none
+&none  &mmv MOVE_LEFT    &mmv MOVE_DOWN     &mmv MOVE_RIGHT   &none          &none  &kp RSHFT   &none     &none      &kp RCTRL
 &none  &msc SCRL_LEFT    &none              &msc SCRL_RIGHT   &none          &none  &none       &none     &none      &none
                &none  &mkp RCLK  &mkp LCLK  &trans &none  &none
             >;
@@ -155,9 +155,9 @@
 
         HOTKEYS {
             bindings = <
-&none  &none       &none          &kp LS(F9)     &kp RS(F10)    &none          &none          &none             &kp LG(LA(O))  &kp NON_US_BACKSLASH
-&none  &none       &none          &kp LG(LA(F))  &kp LC(LS(F))  &kp RA(F1)     &kp RG(N9)     &kp RA(F12)       &kp LG(LA(L))  &kp RS(N5)
-&none  &none       &kp LG(LA(C))  &kp LG(LA(V))  &none          &kp LG(LA(N))  &kp LG(LA(M))  &kp RS(NUMBER_6)  &kp RS(N7)     &none
+&bt BT_PRV  &none       &none          &kp LS(F9)     &kp RS(F10)    &none          &none          &none             &kp LG(LA(O))  &kp NON_US_BACKSLASH
+&bt BT_CLR  &none       &none          &kp LG(LA(F))  &kp LC(LS(F))  &kp RA(F1)     &kp RG(N9)     &kp RA(F12)       &kp LG(LA(L))  &kp RS(N5)
+&bt BT_NXT  &none       &kp LG(LA(C))  &kp LG(LA(V))  &none          &kp LG(LA(N))  &kp LG(LA(M))  &kp RS(NUMBER_6)  &kp RS(N7)     &none
               &none       &none       &none          &trans    &trans             &trans
             >;
         };
