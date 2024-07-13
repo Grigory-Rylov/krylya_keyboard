@@ -3,6 +3,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
 #include "boards/shields/krylya_keyboard/mouse.dtsi"
+#include <behaviors.dtsi>
 
 //  ##########################################################
 //  ###########        WORKING 2023/07/1       ###############
@@ -42,7 +43,7 @@
 
 &mt {
     flavor = "hold-preferred";
-    tapping-term-ms = <500>;
+    tapping-term-ms = <200>;
 };
 
 &lt {
@@ -80,6 +81,16 @@
     };
 
     behaviors {
+            lh_pht: left_positional_hold_tap {
+                compatible = "zmk,behavior-hold-tap";
+                #binding-cells = <2>;
+                flavor = "tap-unless-interrupted";
+                tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+                quick-tap-ms = <200>;
+                bindings = <&kp>, <&kp>;
+                hold-trigger-key-positions = <5 6 7 8 9 10>;    // <---[[right-hand keys]]
+            };
+
         //   td_mt_ls: tap_dance_mod_tap {
         //       compatible = "zmk,behavior-tap-dance";
         //       label = "TAP_DANCE_LSHIFT";
@@ -101,8 +112,8 @@
 
         default_layer {
             bindings = <
-&kp Q        &mt LEFT_GUI W  &mt LEFT_ALT E  &kp R               &kp T                  &kp Y             &kp U               &mt RALT I        &mt RGUI O  &kp P
-&mt LCTRL A  &kp S           &kp D           &mt LEFT_SHIFT F    &kp G                  &kp H             &mt RSHFT J         &kp K            &kp L       &mt RCTRL SEMICOLON
+&kp Q        &kp W           &kp E           &kp R               &kp T                  &kp Y             &kp U               &kp I            &kp O       &kp P
+&lh_pht LCTRL A  &lh_pht LEFT_GUI S  &lh_pht LEFT_ALT D  &lh_pht LEFT_SHIFT F    &kp G                  &kp H             &lh_pht RSHFT J         &lh_pht RALT K       &lh_pht RGUI L  &lh_pht RCTRL SEMICOLON
 &kp Z        &kp X           &kp C           &kp V               &kp B                  &kp N             &kp M               &kp COMMA        &kp PERIOD  &kp SLASH
                              &mo NUMBERS     &lt FUNCTION SPACE  &mo NAVIGATION         &lt MOUSE ENTER   &lt SYMBOLS SPACE   &lt HOTKEYS TAB
             >;
@@ -110,17 +121,17 @@
 
         NAVIGATION {
             bindings = <
-&kp ESC             &kp LGUI          &kp LALT           &none            &none                 &kp C_BRIGHTNESS_INC    &kp HOME   &kp UP       &kp END        &kp LG(Y)
-&kp LEFT_CONTROL    &kp LG(LA(LEFT))  &kp LG(LA(RIGHT))  &kp LSHIFT       &kp BACKSPACE         &kp C_BRIGHTNESS_DEC    &kp LEFT   &kp DOWN     &kp RIGHT      &kp DELETE
-&none               &none             &none              &kp BACKSPACE    &none                 &none        &kp LG(Z)  &kp PAGE_UP  &kp PAGE_DOWN  &kp LG(A)
-                                      &none              &none            &trans                &none        &kp CAPS   &none
+&kp ESC             &none             &none             &none            &none                 &kp C_BRIGHTNESS_INC    &kp HOME   &kp UP       &kp END        &kp LG(Y)
+&kp LEFT_CONTROL    &kp LGUI          &kp LALT          &kp LSHIFT       &kp BACKSPACE         &kp C_BRIGHTNESS_DEC    &kp LEFT   &kp DOWN     &kp RIGHT      &kp DELETE
+&none               &kp LG(LA(LEFT))  &kp LG(LA(RIGHT)) &kp BACKSPACE    &none                 &none        &kp LG(Z)  &kp PAGE_UP  &kp PAGE_DOWN  &kp LG(A)
+                                      &none             &none            &trans                &none        &kp CAPS   &none
             >;
         };
 
         FUNCTION {
             bindings = <
-&none             &kp LGUI  &kp LALT      &none         &kp C_VOLUME_UP         &none      &kp F7  &kp F8    &kp F9  &kp F10
-&kp LEFT_CONTROL  &none     &none         &kp LSHFT     &kp K_MUTE              &none      &kp F4  &kp F5    &kp F6  &kp F11
+&none             &none     &none         &none         &kp C_VOLUME_UP         &none      &kp F7  &kp F8    &kp F9  &kp F10
+&kp LEFT_CONTROL  &kp LGUI  &kp LALT      &kp LSHFT     &kp K_MUTE              &none      &kp F4  &kp F5    &kp F6  &kp F11
 &none             &none     &none         &none         &kp C_VOLUME_DOWN       &kp INS    &kp F1  &kp F2    &kp F3  &kp F12
                             &trans        &none         &none                   &none      &none   &kp SEMI
             >;
@@ -128,8 +139,8 @@
 
         NUMBERS {
             bindings = <
-&none             &kp LGUI  &kp LALT  &none      &none          &kp GREATER_THAN  &kp N7        &kp N8        &kp N9        &kp COLON
-&kp LEFT_CONTROL  &none     &none     &kp LSHFT  &none          &kp LESS_THAN     &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp LEFT_PARENTHESIS
+&none             &none     &none     &none      &none          &kp GREATER_THAN  &kp N7        &kp N8        &kp N9        &kp COLON
+&kp LEFT_CONTROL  &kp LGUI  &kp LALT  &kp LSHFT  &none          &kp LESS_THAN     &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp LEFT_PARENTHESIS
 &none             &none     &none     &none      &none          &kp EQUAL         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH
                             &none     &none      &trans         &kp N0            &kp PLUS      &kp MINUS
             >;
@@ -137,8 +148,8 @@
 
         MOUSE {
             bindings = <            
-&none  &msc SCRL_DOWN    &mmv MOVE_UP       &msc SCRL_UP        &none           &none  &none       &kp RALT  &kp LGUI   &none
-&none  &mmv MOVE_LEFT    &mmv MOVE_DOWN     &mmv MOVE_RIGHT     &none           &none  &kp RSHFT   &none     &none      &kp RCTRL
+&none  &msc SCRL_DOWN    &mmv MOVE_UP       &msc SCRL_UP        &none           &none  &none       &none     &none      &none
+&none  &mmv MOVE_LEFT    &mmv MOVE_DOWN     &mmv MOVE_RIGHT     &none           &none  &kp RSHFT   &kp RALT  &kp LGUI   &kp RCTRL
 &none  &msc SCRL_LEFT    &none              &msc SCRL_RIGHT     &none           &none  &none       &none     &none      &none
                          &none              &mkp RCLK           &mkp LCLK       &trans &none       &none
             >;
