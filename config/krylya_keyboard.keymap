@@ -101,64 +101,64 @@
 
         default_layer {
             bindings = <
-&kp Q        &kp W           &kp E           &kp R               &kp T                  &kp Y             &kp U               &kp I            &kp O            &kp P
-&mt LCTRL A  &kp S           &kp D           &mt LEFT_SHIFT F    &kp G                  &kp H             &mt RSHFT J         &kp K            &kp L            &mt RCTRL SEMICOLON
-&kp Z        &mt LEFT_GUI X  &mt LEFT_ALT C  &kp V               &kp B                  &kp N             &kp M               &mt RALT COMMA   &mt RGUI PERIOD  &kp SLASH
-                             &mo NUMBERS     &lt FUNCTION SPACE  &mo NAVIGATION         &lt MOUSE ENTER   &lt SYMBOLS SPACE   &lt HOTKEYS TAB
+&kp Q        &kp W           &kp E           &kp R               &kp T              &kp Y             &kp U               &kp I            &kp O       &kp P
+&mt LCTRL A  &mt LEFT_GUI S  &mt LEFT_ALT D  &mt LEFT_SHIFT F    &kp G              &kp H             &mt RSHFT J         &mt RALT K       &mt RGUI L  &mt RCTRL SEMICOLON
+&kp Z        &kp X           &kp C           &kp V               &kp B              &kp N             &kp M               &kp COMMA        &kp PERIOD  &kp SLASH
+                             &mo NAVIGATION  &lt FUNCTION SPACE  &mo NUMBERS        &lt HOTKEYS TAB   &lt SYMBOLS SPACE   &lt MOUSE ENTER
             >;
         };
 
         NAVIGATION {
             bindings = <
 &kp ESC             &none             &none              &none            &none                 &kp C_BRIGHTNESS_INC    &kp HOME   &kp UP       &kp END        &kp LG(Y)
-&kp LEFT_CONTROL    &kp LG(LA(LEFT))  &kp LG(LA(RIGHT))  &kp LSHIFT       &kp BACKSPACE         &kp C_BRIGHTNESS_DEC    &kp LEFT   &kp DOWN     &kp RIGHT      &kp DELETE
-&none               &kp LGUI          &kp LALT           &kp BACKSPACE    &none                 &none        &kp LG(Z)  &kp PAGE_UP  &kp PAGE_DOWN  &kp LG(A)
-                                      &none             &none             &trans                &kp TILDE    &kp CAPS   &none
+&kp LEFT_CONTROL    &kp LGUI          &kp LALT           &kp LSHIFT       &kp BACKSPACE         &kp C_BRIGHTNESS_DEC    &kp LEFT   &kp DOWN     &kp RIGHT      &kp DELETE
+&none               &kp LG(LA(LEFT))  &kp LG(LA(RIGHT))  &kp BACKSPACE    &none                 &none        &kp LG(Z)  &kp PAGE_UP  &kp PAGE_DOWN  &kp LG(A)
+                                      &trans             &none            &none                 &kp TILDE        &kp CAPS   &none
             >;
         };
 
         FUNCTION {
             bindings = <
-&none             &none     &none         &none         &kp C_VOLUME_UP         &none      &kp F7  &kp F8    &kp F9  &kp F10
-&kp LEFT_CONTROL  &none     &none         &kp LSHFT     &kp K_MUTE              &none      &kp F4  &kp F5    &kp F6  &kp F11
-&none             &kp LGUI  &kp LALT      &none         &kp C_VOLUME_DOWN       &kp INS    &kp F1  &kp F2    &kp F3  &kp F12
-                            &trans        &none         &none                   &none      &none   &kp SEMI
+&none             &none     &none     &none       &kp C_VOLUME_UP         &none      &kp F7  &kp F8    &kp F9  &kp F10
+&kp LEFT_CONTROL  &kp LGUI  &kp LALT  &kp LSHFT   &kp K_MUTE              &none      &kp F4  &kp F5    &kp F6  &kp F11
+&none             &none     &none     &none       &kp C_VOLUME_DOWN       &kp INS    &kp F1  &kp F2    &kp F3  &kp F12
+                            &none     &none       &trans                  &kp SEMI   &none   &none
             >;
         };
 
         NUMBERS {
             bindings = <
 &none             &none     &none     &none      &none          &kp GREATER_THAN  &kp N7        &kp N8        &kp N9        &kp COLON
-&kp LEFT_CONTROL  &none     &none     &kp LSHFT  &none          &kp LESS_THAN     &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp LEFT_PARENTHESIS
-&none             &kp LGUI  &kp LALT  &none      &none          &kp EQUAL         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH
-                            &none     &none      &trans         &kp N0            &kp PLUS      &kp MINUS
+&kp LEFT_CONTROL  &kp LGUI  &kp LALT  &kp LSHFT  &none          &kp LESS_THAN     &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp LEFT_PARENTHESIS
+&none             &none     &none     &none      &none          &kp EQUAL         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH
+                            &trans    &none      &none          &kp MINUS         &kp PLUS      &kp N0
             >;
         };
 
         MOUSE {
-            bindings = <            
-&none  &msc SCRL_DOWN    &mmv MOVE_UP       &msc SCRL_UP        &none           &none  &none       &none     &none      &none
-&none  &mmv MOVE_LEFT    &mmv MOVE_DOWN     &mmv MOVE_RIGHT     &none           &none  &kp RSHFT   &none     &none      &kp RCTRL
-&none  &msc SCRL_LEFT    &none              &msc SCRL_RIGHT     &none           &none  &none       &kp RALT  &kp LGUI   &none
-                         &none              &mkp RCLK           &mkp LCLK       &trans &none       &none
+            bindings = <
+&none  &msc SCRL_DOWN  &mmv MOVE_UP     &msc SCRL_UP      &none           &none  &none       &kp RALT  &kp LGUI   &none
+&none  &mmv MOVE_LEFT  &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &none           &none  &kp RSHFT   &none     &none      &kp RCTRL
+&none  &msc SCRL_LEFT  &none            &msc SCRL_RIGHT   &none           &none  &none       &none     &none      &none
+                       &mkp LCLK        &mkp RCLK         &none           &none  &none       &trans
             >;
         };
 
         SYMBOLS {
             bindings = <
-&kp SQT         &kp LEFT_BRACKET       &kp RIGHT_BRACKET      &kp DOUBLE_QUOTES         &kp DOLLAR      &kp PIPE      &kp HASH              &kp CARET     &kp GRAVE   &kp LEFT_BRACKET
-&kp LEFT_BRACE  &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE           &kp UNDERSCORE  &kp SLASH     &kp AMPERSAND         &kp PERCENT   &kp MINUS   &kp SQT
-&kp LESS_THAN   &kp EXCLAMATION        &kp COLON              &kp GREATER_THAN          &kp AT_SIGN     &kp ASTERISK  &kp NON_US_BACKSLASH  &kp TILDE     &none       &kp RIGHT_BRACKET
-                                       &none                  &none                     &none           &none         &trans                &none
+&kp SQT         &kp LEFT_BRACKET       &kp RIGHT_BRACKET      &kp DOUBLE_QUOTES  &kp DOLLAR             &kp PIPE      &kp HASH              &kp CARET     &kp GRAVE   &kp LEFT_BRACKET
+&kp LEFT_BRACE  &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE    &kp UNDERSCORE         &kp SLASH     &kp AMPERSAND         &kp PERCENT   &kp MINUS   &kp SQT
+&kp LESS_THAN   &kp EXCLAMATION        &kp COLON              &kp GREATER_THAN   &kp AT_SIGN            &kp ASTERISK  &kp NON_US_BACKSLASH  &kp TILDE     &none       &kp RIGHT_BRACKET
+                                       &none                  &none              &none                  &none         &trans                &none
             >;
         };
 
         HOTKEYS {
             bindings = <
-&bt BT_PRV  &none       &none          &kp LS(F9)     &kp RS(F10)    &none          &none          &none             &kp LG(LA(O))  &kp NON_US_BACKSLASH
-&bt BT_CLR  &none       &none          &kp LG(LA(F))  &kp LC(LS(F))  &kp RA(F1)     &kp RG(N9)     &kp RA(F12)       &kp LG(LA(L))  &kp RS(N5)
-&bt BT_NXT  &none       &kp LG(LA(C))  &kp LG(LA(V))  &none          &kp LG(LA(N))  &kp LG(LA(M))  &kp RS(NUMBER_6)  &kp RS(N7)     &none
-                        &none          &none          &none          &trans         &trans         &trans
+&bt BT_PRV  &none  &none          &kp LS(F9)     &kp RS(F10)            &none          &none          &none             &kp LG(LA(O))  &kp NON_US_BACKSLASH
+&bt BT_CLR  &none  &none          &kp LG(LA(F))  &kp LC(LS(F))          &kp RA(F1)     &kp RG(N9)     &kp RA(F12)       &kp LG(LA(L))  &kp RS(N5)
+&bt BT_NXT  &none  &kp LG(LA(C))  &kp LG(LA(V))  &none                  &kp LG(LA(N))  &kp LG(LA(M))  &kp RS(NUMBER_6)  &kp RS(N7)     &none
+                   &none          &none          &none                  &trans         &trans         &trans
             >;
         };
     };
