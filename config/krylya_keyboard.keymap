@@ -113,7 +113,7 @@
 &kp ESC             &none             &none              &none            &none                 &kp C_BRIGHTNESS_INC    &kp HOME   &kp UP       &kp END        &kp LG(Y)
 &kp LEFT_CONTROL    &kp LG(LA(LEFT))  &kp LG(LA(RIGHT))  &kp LSHIFT       &kp BACKSPACE         &kp C_BRIGHTNESS_DEC    &kp LEFT   &kp DOWN     &kp RIGHT      &kp DELETE
 &none               &kp LGUI          &kp LALT           &kp BACKSPACE    &none                 &none        &kp LG(Z)  &kp PAGE_UP  &kp PAGE_DOWN  &kp LG(A)
-                                      &none             &none             &trans                &none        &kp CAPS   &none
+                                      &none             &none             &trans                &kp TILDE    &kp CAPS   &none
             >;
         };
 
@@ -146,10 +146,10 @@
 
         SYMBOLS {
             bindings = <
-&kp SQT         &kp LEFT_BRACKET       &kp RIGHT_BRACKET      &kp DOUBLE_QUOTES  &kp DOLLAR      &kp PIPE      &kp HASH              &kp CARET     &kp GRAVE   &kp LEFT_BRACKET
-&kp LEFT_BRACE  &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE    &kp UNDERSCORE  &kp SLASH     &kp AMPERSAND         &kp PERCENT   &kp MINUS   &kp SQT
-&kp LESS_THAN   &kp EXCLAMATION        &kp COLON              &kp GREATER_THAN   &kp AT_SIGN     &kp ASTERISK  &kp NON_US_BACKSLASH  &kp TILDE     &none       &kp RIGHT_BRACKET
-                                       &none                  &none              &none           &none         &trans                &none
+&kp SQT         &kp LEFT_BRACKET       &kp RIGHT_BRACKET      &kp DOUBLE_QUOTES         &kp DOLLAR      &kp PIPE      &kp HASH              &kp CARET     &kp GRAVE   &kp LEFT_BRACKET
+&kp LEFT_BRACE  &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE           &kp UNDERSCORE  &kp SLASH     &kp AMPERSAND         &kp PERCENT   &kp MINUS   &kp SQT
+&kp LESS_THAN   &kp EXCLAMATION        &kp COLON              &kp GREATER_THAN          &kp AT_SIGN     &kp ASTERISK  &kp NON_US_BACKSLASH  &kp TILDE     &none       &kp RIGHT_BRACKET
+                                       &none                  &none                     &none           &none         &trans                &none
             >;
         };
 
